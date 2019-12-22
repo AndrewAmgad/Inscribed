@@ -1,0 +1,144 @@
+/* The following classes are modifications to the SideNav package to match the application's requirements */
+
+.sidenav---sidenav---_2tBP{
+    background: white;
+    color: black;
+    /* border-right: 0.5px solid rgb(211, 211, 211); */
+    margin-top: 66px;
+    padding-right: 5px;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0px;
+}
+
+.sidenav---sidenav-navitem---uwIJ-, .sidenav---sidenav-navitem---uwIJ-::hover{
+    background: none !important;
+    border-radius: 50px !important;
+    display: none !important
+}
+
+
+
+ .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > * {
+    color: inherit !important;
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after{
+    background: rgba(87, 77, 143, 0.671) !important;
+    border-radius: 0px 30px 30px 0px !important;
+    opacity: 1 !important;
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after{
+    background: rgba(87, 77, 143, 0.671) !important;
+    border-radius: 0px 30px 30px 0px !important;
+    opacity: 1 !important;
+}
+
+.sidenav---navitem---9uL5T:hover{
+    background: rgba(87, 77, 143, 0.671) !important;
+    border-radius: 0px 30px 30px 0px !important;
+    opacity: 1 !important
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T::after{
+    border-radius: 0px 30px 30px 0px !important;
+}
+
+
+@media screen and (max-width: 601px){
+    .sidenav---sidenav---_2tBP{
+        margin-top: 53px;
+    }
+}
+
+/* @media screen and (min-width: 601px) and (max-width: 1000px){
+    .sidenav---sidenav---_2tBP{
+        overflow-y: scroll;
+        margin-top: 65px;
+    }
+} */
+
+@media screen and (min-width: 599px){
+    /* .sidenav---sidenav---_2tBP{
+        visibility: visible !important;
+    } */
+
+    .sidenav---sidenav---_2tBP::-webkit-scrollbar {
+        width: 0px;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+
+    .sidenav---sidenav---_2tBP{
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+
+.sidenav---navtext---1AE_f {
+    color: black ;
+    font-weight: 500;
+    margin-left: 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.sidenav---navitem---9uL5T{
+  
+    opacity: 0.999;
+    margin-top: 8px;
+    background: white;
+}
+
+.nav-label{
+    margin: 16px;
+    letter-spacing: 0.7px
+}
+
+.line{
+    border-bottom: 1px solid rgba(179, 179, 179, 0.29);
+}
+
+.nav-text-item{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #5f6368;
+    font-size: 10px;
+}
+
+@media screen and (min-height: 800px){
+    .nav-text-item{
+        position: absolute;
+        bottom: 16px;
+    }
+}
+
+.sidenav---navicon---3gCRo{
+    
+    margin-top: 3px;
+  }
+
+  .sidenav---navitem---9uL5T:hover, .sidenav---sidenav-subnav---1EN61:hover .sidenav---sidenav-subnavitem:hover{
+      background: black;
+      border-radius: 0px 30px 30px 0px;
+      background: #c2c3fd; 
+}
+
+.nav-icon{
+    margin-bottom: 10px;
+    height: 2.2em;
+    border-radius: 50px;
+}
+
+ 
+
+
+
+
+/* .sidenav---sidenav-toggle---1KRjR{
+    background: black;
+    width: 100%;
+} */

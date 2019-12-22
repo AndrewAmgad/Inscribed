@@ -1,0 +1,617 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "ALPHA",
+    "title": "Inscribed Back-End REST API",
+    "description": "This is a REST API created specifically for the Inscribed application.<br /> NOTE: In case the client cannot handle cookies, make sure to send credentials such as the auth. token and the encryption key through the headers. Otherwise, include cookies in requests to protected routes post authentication.",
+    "license": {
+      "name": "Developed by Andrew Amgad",
+      "url": "https://www.facebook.com/andrew.amgad.37"
+    }
+  },
+  "host": "api-inscribed.herokuapp.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "Notes",
+      "description": "Handle user's notes"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "User created",
+            "schema": {
+              "properties": {
+                "registrated": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict Error, object contains four properties: 'email_error', 'password_error', 'firstName_error', \"lastName_error\"",
+            "schema": {
+              "properties": {
+                "errors": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/user/signin": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "User sign in. If the client cannot access sent cookies, make sure to store the auth token and the encryption key somewhere safe and send them through headers when accessing protected routes.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to sign in",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Sign in successful",
+            "schema": {
+              "properties": {
+                "authenticated": {
+                  "type": "boolean"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Input Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/user/logout": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ],
+        "description": "Log out a user by blacklisting its token. Must already have a valid token.",
+        "responses": {
+          "200": {
+            "description": "User logged out",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/user/checkauth": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ],
+        "description": "Check for valid authentication, return user ID and username.",
+        "responses": {
+          "200": {
+            "description": "Authentication Successful",
+            "schema": {
+              "properties": {
+                "authenticated": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/folders": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Folders"
+        ],
+        "description": "Get all folders",
+        "responses": {
+          "200": {
+            "description": "All created folders",
+            "schema": {
+              "properties": {
+                "count": {
+                  "type": "string"
+                },
+                "folders": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "No folders found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/notes/:noteId": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Notes"
+        ],
+        "description": "Get a single note using its ID",
+        "responses": {
+          "200": {
+            "description": "Note fetched",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            }
+          },
+          "401": {
+            "description": "Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Note not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Notes"
+        ],
+        "description": "Edit an already existing note",
+        "responses": {
+          "200": {
+            "description": "Edit Successful",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Note does not exist",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Notes"
+        ],
+        "description": "Delete a specific note using its ID",
+        "responses": {
+          "200": {
+            "description": "Note Deleted",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Operation Failed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/notes": {
+      "post": {
+        "tags": [
+          "Notes"
+        ],
+        "description": "<strong>Create a new note. This route is protected and requires the authentication token to be sent through the header or credentials (cookies).",
+        "parameters": [
+          {
+            "name": "note",
+            "in": "body",
+            "description": "New note",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Post a new note",
+            "schema": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Notes"
+        ],
+        "description": "<strong>Get all user notes. This route is protected and requires the\n authentication token to be sent through the header or credentials\n (cookies).",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authentication",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Grab all notes",
+            "schema": {
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "notes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Note"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "No Entries found",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": [
+        "email",
+        "password",
+        "firstName",
+        "lastName"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Note": {
+      "required": [
+        "title",
+        "text",
+        "color"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        }
+      }
+    },
+    "Error": {
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/User"
+      }
+    }
+  }
+}

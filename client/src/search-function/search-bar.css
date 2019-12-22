@@ -1,0 +1,110 @@
+.search-bar{
+    /* margin: 0 auto !important; */
+    /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1),  2px 2px rgba(0, 0, 0, 0.18); */
+    border-radius: 10px;
+    height: 50px !important;
+    width: 600px !important;
+    padding: 0px !important;
+    background: #f1f3f4 !important;
+    /* -webkit-box-shadow: 0 0 2px #fff;
+        box-shadow: 0 0 2px;
+      */
+}
+
+.search-bar-container{
+    padding-left: 170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.search-bar:focus-within{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.search-bar-input{
+    border: 0px !important;
+    height: 40px !important;
+    width: 540px !important;
+    color: black !important;
+    opacity: 1;
+    padding-bottom: 10px !important;
+    background: #f1f3f4 !important;
+   
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+.search-bar-input:focus{
+    outline-style: none !important;
+    outline-color: transparent;
+    box-shadow: none !important;
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .search-bar-container{
+        padding-left: 0px;
+    }
+    .search-bar-input{
+        width: 240px !important
+    }
+
+    .search-bar{
+        width: 300px !important
+    }
+}
+
+@media screen and (max-width: 800px){
+    .search-bar-input{
+        width: 260px !important;
+        margin-left: 12px;
+    }
+
+    .search-bar-container{
+        width: 100% !important;
+        position: absolute;
+        top: 0px;
+        margin-left: auto;  
+        margin-right: auto;
+        max-width: 300px;
+    }
+    .search-bar{
+        width: 100% !important;
+        margin-bottom: -46px;
+        margin-top: 12px;
+        position: absolute;
+        top: 0px;
+    }
+}
+
+.search-bar-input::placeholder{
+    font-size: 18px;
+}
+
+.search-icon{
+    height: 30px;
+    float: left;
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+.back-icon{
+    height: 30px;
+    float: left;
+    margin-left: 18px;
+    margin-top: 10px;
+    color : grey;
+    font-size: 20px !important;
+}

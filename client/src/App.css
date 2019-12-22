@@ -1,0 +1,39 @@
+body{
+  font-family: 'Poppins', sans-serif !important;
+  height: 100%;
+
+}
+
+html{
+  height: 100%;
+}
+
+.router-container{
+  padding-top: 80px;
+  margin-left: 0px;
+}
+
+.dark-background{
+  background: rgb(44, 44, 44) !important;
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.dark-text{
+  color: rgb(235, 235, 235) !important;
+}
+
+/* @media screen and (min-width: 600px){
+  .router-container{
+    margin-left: 65px;
+  }
+} */
+
+
+@media screen and (min-width: 1000px){
+  .router-container{
+    margin-left: 236px;
+  }
+}

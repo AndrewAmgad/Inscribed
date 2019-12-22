@@ -1,0 +1,160 @@
+.note-modal-bottom{
+    background: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    height: 55px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: inline;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+
+}
+.bottom-icons{
+    margin-top: 14px;
+    width: 50%;
+    display: inline-block;
+    
+}
+
+.bottom-icon{
+   font-size: 23px !important;
+   margin-left: 42px;
+   margin-right: 10px;
+   -o-transition:all .5s;
+   -webkit-transition: all .5s;
+   -moz-transition: all .5s;
+   transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.bottom-icon:hover{
+    cursor: pointer;
+}
+
+.color-div:before{
+    content: ' \25CF';
+    font-size: 60px;
+   
+}
+
+.color-div{
+    /* color: rgba(255, 255, 255, 0); */
+    content:'\25CF';
+    display: inline-block;
+    width: 20%;
+    margin: 4px;
+
+    /* margin-bottom: 8px; */
+    /* border-radius: 50%; */
+}
+
+.color-div:hover{
+    cursor: pointer;
+}
+
+.color-wheel{
+    margin-top: 8px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.close-modal-button{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 32px;
+    border-radius: 5px !important;
+    border: 0px !important;
+    background: rgb(241, 241, 241) !important;
+}
+
+.folderTooltip{
+    margin: 8px;
+}
+
+.folderTooltip-title{
+    font-weight: 600
+}
+
+.folderTooltip-input{
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.folderTooltip-folder{
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+}
+.MuiFormControlLabel-label{
+    font-size: 14px !important;
+}
+
+.create-folder-text:hover{
+    cursor: pointer;
+}
+
+.create-folder-text{
+    font-size: 14px;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+hr{
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+@media screen and (min-width: 1000px){
+    .styles_overlay__CLSq-{
+        margin-left: 236px !important;
+    }
+  }
+
+@media screen and (max-width: 650px){
+    .bottom-icons{
+        width: 100%;
+    }
+
+    .note-modal-bottom{
+        height: 45px;
+    }
+
+    .bottom-icon{
+        font-size: 20px !important;
+        margin-right: auto;
+        margin-left: 12.4%;
+        width: 5%;
+    }
+
+    .bottom-icons{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12px;
+    }
+
+    .note-modal-text, .note-modal-date{
+        font-size: 14px;
+    }
+
+    .note-modal-title{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .color-div:before{
+        font-size: 50px;
+       
+    }
+}

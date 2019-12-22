@@ -1,0 +1,151 @@
+.note-card{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 10px !important;
+    overflow: hidden;
+    width: 320px;
+    max-height: 540px;
+   
+}
+
+.note-card-blue{
+    background: rgb(174, 203, 250)!important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.note-card-grey{
+    background: rgb(232, 234, 237) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.note-card-red{
+    background: rgb(242, 139, 130) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.note-card-dark-blue{
+    background: rgb(54, 69, 95) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.note-card-dark-grey{
+    background: rgb(86, 86, 87) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+   
+}
+
+.note-card-dark-red{
+    background: rgb(112, 79, 76) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.note-card-dark-white{
+    background: rgb(44, 44, 44) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+     border: 0.5px solid rgba(200, 200, 200, 0.486) !important;
+}
+
+
+.note-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.card-info{
+    margin: 16px;
+}
+
+.card-date{
+    color: rgb(97, 97, 97)
+}
+
+.card-date-dark{
+    color: rgb(146, 146, 146)
+}
+
+.card-title{
+    font-weight: 700;
+    margin-top: 8px;
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    max-height: 40*2px;
+}
+
+.overview{
+    margin-top: 10px;
+    line-height: 1.6em;
+    width: 100%;
+    display: inherit;
+    
+}
+
+
+
+@media screen and (max-width: 1380px){
+    .note-card{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (min-width: 1700px){
+    .note-card{
+        margin-left: 70px;
+        margin-right: 10px;
+        /* margin-left: auto;
+        margin-right: auto; */
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .card-title{
+        font-size: 18px;
+    }
+
+    .card-subtitle{
+        font-size: 11px;
+    }
+
+    .overview{
+        font-size: 14px;
+    }
+}
+
+
+

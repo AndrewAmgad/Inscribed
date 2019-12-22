@@ -1,0 +1,183 @@
+.styles_modal__gNwvD{
+    border-radius: 10px !important;
+    width: 800px !important;
+    min-height: 500px !important;
+    
+}
+
+.styles_overlay__CLSq-{
+    background: rgba(61, 61, 61, 0.356);
+    -moz-transition: all 0.3s linear;
+    /* WebKit */
+    -webkit-transition: all 0.3s linear;
+    /* Opera */
+    -o-transition: all 0.3s linear;
+    /* Standard */
+    transition: all 0.3s linear;
+}
+
+.styles_closeIcon__1QwbI{
+    margin-right: 12px;
+    margin-top: 14px;
+   
+}
+
+.spinner{
+    display: block;
+    position: absolute;
+ 
+    top: 45%;
+    left: 47%; /* or: left: 50%; */
+    width: 50px !important;
+    height: 50px !important;
+
+}
+
+#note-modal-dark-white{
+    background: rgb(44, 44, 44) 
+}
+
+#note-modal-blue{
+    background: rgb(174, 203, 250)!important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+#note-modal-dark-blue{
+    background: rgb(54, 69, 95) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+#note-modal-grey{
+    background: rgb(232, 234, 237) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+#note-modal-dark-grey{
+    background: rgb(86, 86, 87) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+#note-modal-red{
+    background: rgb(242, 139, 130) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+#note-modal-dark-red{
+    background: rgb(112, 79, 76) !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+
+#note-modal-white{
+    background: white !important;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+.note-modal-text{
+    margin-top: 12px;
+    width: 100%;
+    height: 450px;
+    border: 0px !important;
+    resize: none;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+     padding-left: 0px;
+}
+
+.note-modal-text::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.note-modal-text:focus{
+    outline-style: none !important;
+    outline-color: transparent;
+    box-shadow: none !important;
+}
+
+.note-modal-title{
+    border: 0px !important;
+    font-size: 23px;
+    width: 100%;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    padding-left: 0px !important;
+   
+}
+
+.note-modal-title:focus{
+    outline-style: none !important;
+    outline-color: transparent;
+    box-shadow: none !important;
+}
+
+.note-modal-date{
+    color: rgb(92, 92, 92)
+}
+
+.note-modal-date-dark{
+    color: rgb(146, 146, 146)
+}
+
+
+@media screen and (max-width: 600px){
+    .color-div:before{
+        font-size: 35px;
+       
+    }
+}
+
+@media screen and (min-height: 600px){
+    .styles_modal__gNwvD{
+        min-height: 600px !important;
+    }
+}
+
+@media screen and (max-height: 600px){
+    
+    .note-modal-text{
+        height: 360px;
+    }
+}
+
+
