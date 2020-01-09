@@ -24,8 +24,6 @@ Date.prototype.toShortFormat = function () {
 module.exports.get_all = (req, res, next) => {
     const userId = req.userData.userId;
     const folder = req.query.folder;
-    console.log("USERID: " + userId)
-    console.log(req.userData)
 
     var query =
         [
@@ -199,8 +197,7 @@ module.exports.patch = (req, res, next) => {
 
         updatedValue.archived = archived;
     }
-
-    console.log(updatedValue)
+    
     Note.findOneAndUpdate({
         $and: [
             { _id: noteId },
