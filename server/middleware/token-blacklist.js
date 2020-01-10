@@ -62,10 +62,9 @@ module.exports.blackListAll = (req, res, next) => {
 
 
 // Loop through all of the blacklisted tokens and check if they're past their valid period, delete them to save storage.
-// UNCOMENT SCHEDULEJOB BEFORE PRODUCTION
 module.exports.clearBlackList = () => {
     var tokens = []
-    // schedule.scheduleJob('30 48 22 * * *', () => {
+    schedule.scheduleJob('30 48 22 * * *', () => {
     User.find().cursor().eachAsync(async (user) => {
 
         // Convert the ID object to a string for Redis to understand
@@ -98,7 +97,6 @@ module.exports.clearBlackList = () => {
 
                         redisClient.LREM(id, "-1", result[i]);
                         redisClient.LRANGE(id, "-100", "100", (err, result) => {
-                            // console.log("AFTER_REM: ", result);
                         });
 
                     };
@@ -108,19 +106,20 @@ module.exports.clearBlackList = () => {
     })
     
     
-    // .then(() => {
-    //     // Push the tokens array to the expiredTokens collection
-    //     if (tokens.length >= 1) {
-    //         ExpiredToken.collection.insertMany(tokens, (err, docs) => {
-    //             if (err) {
-    //                 return console.error(err);
-    //             } else {
-    //                 console.log("Documents inserted to the collection")
-    //             }
-    //         })
-    //     }
+    .then(() => {
+        // Push the tokens array to the expiredTokens collection
+        if (tokens.length >= 1) {
+            ExpiredToken.collection.insertMany(tokens, (err, docs) => {
+                if (err) {
+                    return console.error(err);
+                } else {
+                    console.log("Documents inserted to the collection")
+                }
+            })
+        }
             
 
-    //     });
-    // });
+        });
+    });
 };
+
