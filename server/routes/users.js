@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const signUp = require('../controllers/user/signup');
 const signIn = require('../controllers/user/signin');
-const changePass = require('../controllers/user/change-pass');
 const profile = require('../controllers/user/profile');
 const checkAuth = require('../middleware/check-auth');
 const blacklist = require('../middleware/token-blacklist');
@@ -10,7 +9,6 @@ const passport = require('passport');
 
 router.post('/signup', signUp);
 router.post('/signin', signIn);
-router.post('/changepass', checkAuth, blacklist.blackListAll, changePass);
 router.get('/profile', checkAuth, profile)
 
 router.get('/logout', checkAuth, blacklist.blackListCurrent, (req, res, next) => {
