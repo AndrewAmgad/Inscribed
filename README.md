@@ -19,14 +19,14 @@ https://inscribed.herokuapp.com/
 * The ability to switch between dark & light mode
 * Blazing fast UI by keeping API requests and page refreshes to minimum
 * Minimal and simple design for ease of usage 
-* Responsive design
+* Responsive design & mobile support
 
 ## Back-End Features
 * Endpoints for creating, editing, archiving, deleting notes as well as creating & signing in users.
 * Uses MongoDB as the main database and Redis as an in-memory data store.
 * OAuth using Google API
 * JSON Web Tokens are used to handle user authentications, sent to the client as an HTTP-Only, secure cookie.
-* Redis is used to blacklist/invalidate tokens on log out or in case of a breach.
+* Redis is used to blacklist/invalidate tokens on log out or in case of an account breach.
 
 ## Author
 Andrew Amgad,
