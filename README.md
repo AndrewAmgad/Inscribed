@@ -1,8 +1,6 @@
 # Inscribed
 https://inscribed.herokuapp.com/
 
-* NOTE: If you are using Safari browser, make sure to switch off cross site tracking as it prevents user log in from functioning properly.
-
 ## Introduction
 - A note-taking web application, serves the purpose of writing down notes & seperating them into several folders. The front-end is built using React.js & Redux and the back-end uses Node.js, Express and MongoDB. 
 
